@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!-- 
+Name: Ben Sutter
+Date: November 4th, 2020
+Class: SDEV 300
+Purpose: Home page for Flask website, has an ordered list and images
+ -->
+<html lang="en">
+   <head>
+      <!-- Uses the ugly purple style sheet I made, had to move the sheet to static folder for it to work -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+      <!-- Name of the tab -->
+      <title>Home Page</title>
+   </head>
+   <body>
+      {% for message in get_flashed_messages() %}
+      <p><b>{{ message }}</b></p>
+      {% endfor %}
+      <h1>Home page</h1>
+      <!-- Using double curly braces allows flask to pass things (date_and_time variable) into html -->
+      <p>Current date and time: {{current_time}}</p>
+      <!-- Provides a thematic break between title and the text -->
+      <hr>
+      <h2>About this website:</h2>
+      <p>
+         This website was made as a part of a homework assignment.
+         I (Ben Sutter) am a student at the University of Maryland Global Campus (UMGC).
+         This is my third semester, I am currently pursuing a Bachelor's degree in Computer Science.
+         Before UMGC, I was studying at Pikes Peak Community College in Colorado Springs.
+         I transferred to UMGC at the start of 2020.
+         Here is a random fact about me to show off an ordered list:
+      </p>
+      <!-- ordered list -->
+      <h3>Favorite Video Games:</h3>
+      <ol>
+         <li><b>Monster Hunter World</b><br>
+            <img src="{{ url_for('static', filename='images/MonsterHunterWorld.jpg')}}">
+         </li>
+         <li>Subnautica<br>
+            <img src="{{ url_for('static', filename='images/Subnautica.jpg')}}">
+         </li>
+         <li>Satisfactory<br>
+            <img src="{{ url_for('static', filename='images/Satisfactory.jpg')}}">
+         </li>
+         <li>
+            Stardew Valley<br>
+            <!-- Method to resize found from: https://www.computerhope.com/issues/ch000055.htm  -->
+            <img src="{{ url_for('static', filename='images/Stardew.png')}}" width="616" height="313">
+         </li>
+         <li>Darkest Dungeon<br>
+            <img src="{{ url_for('static', filename='images/DarkestDungeon.jpg')}}">
+         </li>
+      </ol>
+      <p>
+         I had never worked with html or css before so this was a fun project. I like how you can do cool things like <i>italics</i>
+         and <sub>subscript</sub> or <sup>superscript</sup> . This "paragraph" is now ending, thanks for your time.<br>
+         Find out more about UMGC by clinking the below:
+      </p>
+      <!-- Provides a thematic break between the end of the text and the links -->
+      <hr>
+      <!-- Link to the UMGC's website -->
+      <a href="https://www.umgc.edu/">UMGC Website</a>
+      <br>
+      <!-- Method to create button link found from: https://stackoverflow.com/a/2906611 -->
+      <button onclick="location.href='http://127.0.0.1:5000/page2'" type="button"> Next Page</button>
+   </body>
+</html>

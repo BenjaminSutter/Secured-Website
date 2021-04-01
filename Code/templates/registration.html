@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- 
+Name: Ben Sutter
+Date: November 6th, 2020
+Class: SDEV 300
+Purpose: Registration page for the website, has 3 input fields, a submit button, and a redirect button
+ -->
+<html lang="en">
+   <head>
+      <!-- Uses the ugly purple style sheet I made, had to move the sheet to static folder for it to work -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+      <!-- Name of the tab -->
+      <title>Registration</title>
+   </head>
+   <body>
+      {% for message in get_flashed_messages() %}
+      <p style = "max-width: 50ch"><b>{{ message }}</b></p>
+      {% endfor %}
+      <h1>Registration page</h1>
+      <hr style = "width:12%;">
+      <form method = "post">
+         <p>
+            <b>Username:</b><br>
+            <!-- uname is used to pass info to lab7.py for use in request.form["uname"] in registration page.
+               required means the field must be filled before submit button can be pressed-->
+            <input type = "text" placeholder="Enter username" name="uname" required>
+         </p>
+         <p>
+            <b>Password:</b><br>
+            <!-- psw is used to pass info to lab7.py for use in request.form["psw"] in registration page -->
+            <input type = "password" placeholder="Enter password" name="psw" required>
+         </p>
+         <p>
+            <b>Confirm: </b><br>
+            <!-- confirm_psw is used to pass info to lab7.py for use in request.form["confirm_psw"] in registration page -->
+            <input type = "password" placeholder="Confirm password" name="confirm_psw" required>
+         </p>
+         <!-- Submits data from username, password and confirm password fields to the server -->
+         <button type="submit">Register</button>
+      </form>
+      <hr style = "width:12%;">
+      <p>
+         Already have a login?
+         <!-- Buttons that takes the user to the registrationpage -->
+         <button onclick="location.href='http://127.0.0.1:5000/'" type="button"> Login</button>
+      </p>
+   </body>
+</html>

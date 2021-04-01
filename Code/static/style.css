@@ -1,0 +1,104 @@
+/* 
+Name: Ben Sutter
+Date: November 4th, 2020
+Class: SDEV 300
+Purpose: Style sheet for use in html pages
+ */
+
+body {
+  background-color: plum;
+}
+
+h1 {
+  color: darkmagenta;
+}
+
+h2 {
+  color: rebeccapurple;
+}
+
+h3 {
+  color: purple;
+}
+
+/* Method to set max char length of p found from: https://stackoverflow.com/a/26975271 */
+
+p {
+  color: indigo;
+  overflow: hidden;
+  max-width: 100ch;
+}
+
+li {
+  color: purple;
+}
+
+dt {
+  color: purple;
+  font-weight: bold;
+}
+
+dd {
+  color: purple;
+}
+
+/* Method to change link colors found from: https://www.w3schools.com/html/html_links_colors.asp */
+
+a:link {
+  color: maroon;
+}
+
+a:visited {
+  color: firebrick;
+}
+
+/* Method to change hr found from: https://stackoverflow.com/a/10399500 */
+
+hr {
+  background-color: blueviolet; 
+  height: 1px; 
+  border: 0;
+  text-align:left;
+  width:50%;
+  margin-left:0;
+}
+
+/* Method to change button style found from: https://www.w3schools.com/css/tryit.asp?filename=trycss_buttons_color */
+
+button {
+  background-color: darkviolet;
+  color: white;
+  padding: 5px 15px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+}
+
+table, th, td {
+  border: 1px solid darkviolet;
+}
+
+input[type=text] {
+  background-color: violet;
+  color: dimgray;
+}
+
+input[type=password] {
+  background-color: violet;
+  color: dimgray;
+}
+
+input {
+  width: 25%;
+}
+
+button[type=submit] {
+  width: 11%
+}
+
+/* Method to change placeholder style found from: https://developer.mozilla.org/en-US/docs/Web/CSS/::placeholder */
+
+::placeholder {
+  color: dimgray;
+}
+	

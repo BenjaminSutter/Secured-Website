@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- 
+Name: Ben Sutter
+Date: November 4th, 2020
+Class: SDEV 300
+Purpose: Login page for the website, has two input fields, a submit button and other buttons for page redirects.
+ -->
+<html lang="en">
+   <head>
+      <!-- Uses the ugly purple style sheet I made, had to move the sheet to static folder for it to work -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+      <!-- Name of the tab -->
+      <title>Login</title>
+   </head>
+   <body>
+      {% for message in get_flashed_messages() %}
+      <p style = "width:12%;"><b>{{ message }}</b></p>
+      {% endfor %}
+      <h1>Login page</h1>
+      <hr style = "width:12%;">
+      <!-- Method to make form found from: https://www.w3schools.com/howto/howto_css_login_form.asp -->
+      <form method = "post">
+         <p>
+            <b>Username:</b><br>
+            <!-- uname is used to pass info to lab7.py for use in request.form["uname"] in login page.
+               required means the field must be filled before submit button can be pressed-->
+            <input type = "text" placeholder="Enter username" name="uname" required>
+         </p>
+         <p>
+            <b>Password:</b><br>
+            <!-- psw is used to pass info to lab7.py for use in request.form["psw"] in login page -->
+            <input type = "password" placeholder="Enter password" name="psw" required>
+         </p>
+         <!-- Submits data from username and password fields to the server -->
+         <button type="submit">Login</button>
+      </form>
+      <hr style = "width:12%;">
+      <p>
+         Don't have a login?
+         <!-- Button that takes the user to the registration page -->
+         <button onclick="location.href='http://127.0.0.1:5000/registration'" type="button"> Register</button><br><br>
+         Need to reset your password?<br>
+         <!-- Button that takes the user to password reset page-->
+         <button onclick="location.href='http://127.0.0.1:5000/reset'" style = "width:26.5%;"> Reset Password</button>
+      </p>
+   </body>
+</html>

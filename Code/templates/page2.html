@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- 
+Name: Ben Sutter
+Date: November 4th, 2020
+Class: SDEV 300
+Purpose: Second page for Flask website, has a detailed list and a table
+ -->
+<html lang="en">
+   <head>
+      <!-- Uses the ugly purple style sheet I made, had to move the sheet to static folder for it to work -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+      <!-- Name of the tab -->
+	  <title>Second Page</title>
+   </head>
+   <body>
+      <h1>Second Page</h1>
+      <!-- Using double curly braces allows flask to pass things (date_and_time variable) into html --> 
+      <p>Current date and time:
+         {{current_time}}
+      </p>
+      <!-- Provides a thematic break between title and the text -->
+      <hr>
+      <h2>About this page:</h2>
+      <p> I couldn't think of any interesting topics to make to make this website about, 
+         so I'm just going to fill it with meaningless facts about me. 
+         I have changed my degree three times (meeting the national average).
+         I eventually landed on a Computer Science degree because I found myself enjoying creating code and troubleshooting (most of the time).
+         Enough blabbering about myself for this page, here's a detailed list.
+		 </p>
+      <h3>Languages I have some level of familiarity with:</h3>
+      <!-- detailed list -->
+      <dl>
+         <dt>Java</dt>
+         <dd>Four classes taken at UMGC
+         </dd>
+         <dt>Python</dt>
+         <dd>One class from my prior college and this current class.</dd>
+         <dt>HTML</dt>
+         <dd>This assignment (not sure if HTML really counts though)</dd>
+      </dl>
+	  <!-- Table -->
+	  <p> As a military brat, I've moved quite a lot. Here some of my favorite places I've lived:</p>
+      <table>
+         <tr>
+            <th>Year(s)</th>
+            <th>City</th>
+            <th>State</th>
+         </tr>
+         <tr>
+            <td>2016-2020</td>
+            <td>Colorado Springs</td>
+            <td>Colorado</td>
+         </tr>
+         <tr>
+            <td>2014-2015</td>
+            <td>Spesbach</td>
+            <td>Germany</td>
+         </tr>
+         <tr>
+            <td>2009-2012</td>
+            <td>Fairbanks</td>
+            <td>Alaska</td>
+         </tr>
+      </table>
+      <p>Find out more about UMGC's Computer Science degree by clinking the below:</p>
+      <!-- Provides a thematic break between the end of the text and the links -->
+      <hr>
+      <!-- Link to the degree page on UMGC's website -->
+      <a href="https://www.umgc.edu/academic-programs/bachelors-degrees/computer-science-major.cfm">Computer Science Degree Page</a>
+      <br>
+      <!-- Buttons that redirect to home page and third page -->
+      <button onclick="location.href='http://127.0.0.1:5000'" type="button"> Home Page</button>
+      <button onclick="location.href='http://127.0.0.1:5000/page3'" type="button"> Next Page</button>
+   </body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- 
+Name: Ben Sutter
+Date: November 4th, 2020
+Class: SDEV 300
+Purpose: Third page for Flask website, has an ordered list and a table
+ -->
+<html lang="en">
+   <head>
+      <!-- Uses the ugly purple style sheet I made, had to move the sheet to static folder for it to work -->
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+      <!-- Name of the tab -->
+      <title>Final Page</title>
+   </head>
+   <body>
+      <h1>Final Page</h1>
+      <!-- Using double curly braces allows flask to pass things (date_and_time variable) into html -->
+      <p>Current date and time:
+         {{current_time}}
+      </p>
+      <!-- Provides a thematic break between title and the text -->
+      <hr>
+      <h2>About this page:</h2>
+      <p> You made it to the last page, nice work!
+         That also means it's time for more rambling! (yay...)<br>
+         The class this website was made for is Building Secure Python Applications (SDEV 300).
+         It's been a fun class, I'm enjoying how simplified most things are compared to Java.
+         I'm sure your tired of reading me rambling, so we'll close things out with an unordered list.
+      </p>
+      <h3>Languages I want to learn:</h3>
+      <!-- unordered list -->
+      <ul>
+         <li>C#</li>
+         <li>JavaScript</li>
+         <li>Swift</li>
+      </ul>
+      <p>Find out more about SDEV 300 by clinking the below:</p>
+      <!-- Provides a thematic break between the end of the text and the links -->
+      <hr>
+      <!-- Link to the class page on UMGC's website -->
+      <a href="https://www.umgc.edu/academic-programs/course-information.cfm?course=sdev300">SDEV 300 Class Page</a>
+      <br>
+      <!-- Buttons that redirect to the previous and the home page -->
+      <button onclick="location.href='http://127.0.0.1:5000/page2'" type="button"> Previous Page</button>
+      <button onclick="location.href='http://127.0.0.1:5000'" type="button"> Home Page</button>
+   </body>
+</html>
